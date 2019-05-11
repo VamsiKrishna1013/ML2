@@ -1,0 +1,8 @@
+install.packages("gradDescent")
+library('gradDescent')
+data <- read.csv('/Users/sumanthdamarla/Documents/Workspace/R\ projects/Assignment2/Assignment2Data.csv')
+splited_data <- splitData(data, dataTrainRate = 0.8, seed = 123)
+grad_descent <- GD(splited_data$dataTrain, alpha = 0.01, maxIter = 1000, seed = 123)
+print(grad_descent)
+SGD <- SGD(splited_data$dataTrain, alpha = 0.01, maxIter = 1000, seed = 123)
+print(SGD)
